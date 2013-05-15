@@ -20,13 +20,13 @@ var generic = {
 
         // Now enumerate all noninherited, nonfunction properties
         
-        //@see bug 17397
+        //@see bug 393069
         
         var n = 0;
         for(var name in this) {
-            if (!this.hasOwnProperty(name)) continue;   // skip inherited props
+            if (!this.hasOwnProperty(name)) continue;  
             var value = this[name];
-            if (typeof value === "function") continue;  // skip methods
+            if (typeof value === "function") continue;
             if (n++) s += ", ";
             s += name + '=' + value;
         }
